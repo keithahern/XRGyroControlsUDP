@@ -8,3 +8,8 @@ This is a replacement for the default controls used in the VisionOS xrOS Simulat
 4. Open `/Applications/Xcode-beta.app/Contents/Developer/Platforms/XROS.platform/Library/Developer/CoreSimulator/Profiles/UserInterface` and move the original XROS.simdeviceui to a safe place. You CANNOT just rename it, the simulator will search the entire folder and get confused if it finds both the original and modified version.
 5. Clone the git repo and open it in Xcode
 6. Launch the default schema. It should launch the simulator, you can tell it works if the toolbar is changed and the camera is slowly rising.
+
+## UDP Streaming (in this fork)
+The simulator will listen on port 11000 for incoming messages with the format: `Position:x,y,z;Rotation:x,y,z,w` where x,y,z,w are floats. The rotation is a quaternion.  This drives the camera only. No pointer support is added yet.
+There is a Unity project for Magic Leap One to publish this position and rotation data, it should be pretty easy to roll your own.
+
