@@ -7,6 +7,7 @@ import AppKit
     
     private let device: SimDevice
     private let hid_client: SimDeviceLegacyHIDClient
+    var udpReceiver: UdpReceiver?
         
     @objc init(with device: SimDevice) {
         self.device = device
@@ -16,7 +17,11 @@ import AppKit
         super.init()
         
         // Reset the camera to the center
-        hid_client.send(message: IndigoHIDMessage.camera(x: 0.0, y: 0.0, z: 0.0, pitch: 0.0, yaw: 0.0, roll: 0.0).as_struct())
+        hid_client.send(message: IndigoHIDMessage.camera(x: 0.0, y: 0.0, z: 0.0, rot_x: 0.0, rot_y: 0.0, rot_z: 0.0, rot_w:0.0).as_struct())
+        
+        // Start the UDP Receiver
+        udpReceiver = UdpReceiver(hid_client: hid_client)
+        
     }
     
     var sliders: [NSSlider] = []

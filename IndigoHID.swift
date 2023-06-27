@@ -43,7 +43,7 @@ class IndigoHIDMessage {
         data[0x20] = 0x01
     }
     
-    public static func camera(x: Float, y: Float, z: Float, pitch: Float, yaw: Float, roll: Float) -> IndigoHIDMessage {
+    public static func camera(x: Float, y: Float, z: Float, rot_x: Float, rot_y: Float, rot_z: Float, rot_w: Float) -> IndigoHIDMessage {
         let message = IndigoHIDMessage()
         
         message.write(300, at: 0x30)
@@ -52,11 +52,10 @@ class IndigoHIDMessage {
         message.write(y, at: 0x58)
         message.write(z, at: 0x5C)
         
-        message.write(pitch, at: 0x64)
-        message.write(yaw, at: 0x68)
-        message.write(roll, at: 0x6C)
-        
-        message.write(1.0, at: 0x70) // Not sure why, but this is important
+        message.write(rot_x, at: 0x64)
+        message.write(rot_y, at: 0x68)
+        message.write(rot_z, at: 0x6C)
+        message.write(rot_w, at: 0x70)
         
         return message
     }

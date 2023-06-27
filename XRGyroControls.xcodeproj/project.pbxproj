@@ -10,8 +10,10 @@
 		4825CFDE2A48725C0034C938 /* IndigoHID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4825CFDD2A48725C0034C938 /* IndigoHID.swift */; };
 		48BBE94A2A44D80A005E4CF8 /* SimulatorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BBE9492A44D80A005E4CF8 /* SimulatorSupport.swift */; };
 		48BD02ED2A44DCF6005E818E /* XRGyroControls.simdeviceui in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48BBE9422A44D6CA005E4CF8 /* XRGyroControls.simdeviceui */; };
-		48BDCD6C2A478808009ABEF4 /* CoreSimulator in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BDCD6B2A478808009ABEF4 /* CoreSimulator */; };
 		48BDCD6E2A47882C009ABEF4 /* SimulatorKit in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BDCD6D2A47882C009ABEF4 /* SimulatorKit */; };
+		5309AACC2A4B26FE00345F49 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 5309AACB2A4B26FE00345F49 /* CocoaAsyncSocket */; };
+		5309AAD22A4B28AF00345F49 /* UdpReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309AAD12A4B28AF00345F49 /* UdpReceiver.swift */; };
+		53D7BFCD2A4AD9F600EC3816 /* CoreSimulator in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7BFCC2A4AD9F600EC3816 /* CoreSimulator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,10 +34,11 @@
 		48B9A8FB2A4A1393000208F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		48BBE9422A44D6CA005E4CF8 /* XRGyroControls.simdeviceui */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XRGyroControls.simdeviceui; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BBE9492A44D80A005E4CF8 /* SimulatorSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorSupport.swift; sourceTree = "<group>"; };
-		48BDCD6B2A478808009ABEF4 /* CoreSimulator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = CoreSimulator; path = ../../../../Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/CoreSimulator; sourceTree = "<group>"; };
 		48BDCD6D2A47882C009ABEF4 /* SimulatorKit */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = SimulatorKit; path = "/Applications/Xcode-beta.app/Contents/Developer/Library/PrivateFrameworks/SimulatorKit.framework/Versions/A/SimulatorKit"; sourceTree = "<absolute>"; };
 		48BDCD702A4799C9009ABEF4 /* SimulatorKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimulatorKit.swift; path = SimulatorKit/SimulatorKit.swift; sourceTree = "<group>"; };
 		48BDCD722A4799D3009ABEF4 /* CoreSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreSimulator.h; path = CoreSimulator/CoreSimulator.h; sourceTree = "<group>"; };
+		5309AAD12A4B28AF00345F49 /* UdpReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdpReceiver.swift; sourceTree = "<group>"; };
+		53D7BFCC2A4AD9F600EC3816 /* CoreSimulator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = CoreSimulator; path = ../../../../../../Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/CoreSimulator; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D7BFCD2A4AD9F600EC3816 /* CoreSimulator in Frameworks */,
 				48BDCD6E2A47882C009ABEF4 /* SimulatorKit in Frameworks */,
-				48BDCD6C2A478808009ABEF4 /* CoreSimulator in Frameworks */,
+				5309AACC2A4B26FE00345F49 /* CocoaAsyncSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 		48BBE9392A44D6CA005E4CF8 = {
 			isa = PBXGroup;
 			children = (
+				5309AAD12A4B28AF00345F49 /* UdpReceiver.swift */,
 				48B9A8FB2A4A1393000208F4 /* README.md */,
 				4825CFDD2A48725C0034C938 /* IndigoHID.swift */,
 				48BBE9492A44D80A005E4CF8 /* SimulatorSupport.swift */,
@@ -73,10 +78,10 @@
 		48BD02EE2A44DF64005E818E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53D7BFCC2A4AD9F600EC3816 /* CoreSimulator */,
 				48BDCD722A4799D3009ABEF4 /* CoreSimulator.h */,
 				48BDCD702A4799C9009ABEF4 /* SimulatorKit.swift */,
 				48BDCD6D2A47882C009ABEF4 /* SimulatorKit */,
-				48BDCD6B2A478808009ABEF4 /* CoreSimulator */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +115,9 @@
 			dependencies = (
 			);
 			name = XRGyroControls;
+			packageProductDependencies = (
+				5309AACB2A4B26FE00345F49 /* CocoaAsyncSocket */,
+			);
 			productName = XROS;
 			productReference = 48BBE9422A44D6CA005E4CF8 /* XRGyroControls.simdeviceui */;
 			productType = "com.apple.product-type.bundle";
@@ -138,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 48BBE9392A44D6CA005E4CF8;
+			packageReferences = (
+				5309AACA2A4B26FE00345F49 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */,
+			);
 			productRefGroup = 48BBE9432A44D6CA005E4CF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5309AAD22A4B28AF00345F49 /* UdpReceiver.swift in Sources */,
 				48BBE94A2A44D80A005E4CF8 /* SimulatorSupport.swift in Sources */,
 				4825CFDE2A48725C0034C938 /* IndigoHID.swift in Sources */,
 			);
@@ -372,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5309AACA2A4B26FE00345F49 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/robbiehanson/CocoaAsyncSocket";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5309AACB2A4B26FE00345F49 /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5309AACA2A4B26FE00345F49 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48BBE93A2A44D6CA005E4CF8 /* Project object */;
 }
